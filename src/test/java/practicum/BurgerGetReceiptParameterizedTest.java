@@ -48,6 +48,8 @@ public class BurgerGetReceiptParameterizedTest {
         String actualReceipt = burger.getReceipt();
 
         Assert.assertEquals(expectedReceipt, actualReceipt);
+
+        Mockito.verify(burger, Mockito.times(1)).getPrice();
     }
 
     private static Burger getBurgerWithoutIngredients(String bunName, float price) {
